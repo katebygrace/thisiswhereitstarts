@@ -25,7 +25,7 @@ def searchForEpicTickets(username, apitoken, ticket, fixVersion):
 	response = requests.request("GET", newurl, headers=headers, data = {})
 	response_data = response.json()
 	print(response_data)
-	for x in range(0, 2):
+	for x in range(0, 2): # Need to update this for x = number of versions. whoops
 		issue = response_data["issues"][x]["key"]
 		print("Changing fixVersion for " + issue)
 		url = baseURL + issue
